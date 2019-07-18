@@ -1,0 +1,21 @@
+<h2>User details : </h2>
+
+<ul>
+    <li>  User Name  Address  Mobile </li>
+    <li *ngFor="let user of users" [class.selected]="user === selectedUser"  (click)="onSelect(user)">
+        <span>{{user.Name}}</span>
+    
+</li>
+</ul>
+<user-detail [user]='selectedUser'></user-detail>
+
+<table id="user_table">
+    <thead><th>User Name</th><th>City</th><th>Mobile No.</th></thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+           <td> {{user.Name}}</td>
+            <td>{{user.address}}</td>
+           <td> {{user.mobile}}</td>
+    </tr>
+    </tbody>
+</table>
